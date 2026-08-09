@@ -1,31 +1,182 @@
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
+<html lang="en">
+  <head>
+    <!-- META ============================================= -->
+    <script>
+      document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+            window.addEventListener(&#39;beforeunload&#39;, function() {
+                // Prevent caching to ensure the page is reloaded
+                location.reload(true);
+            });
+        });
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="3s education" />
+    <meta property="og:description" content="3s education" />
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="3s education" />
+    <meta name="csrf-token" content="JmNZFcy71q8aJBBZZb6eT8rcuUGyYVi9zuNx3zWU" />
+    <title>
+      3s education
+    </title>
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="https://www.3seducation.com/onlinecourse/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.3seducation.com/onlinecourse/assets/images/favicon.ico" />
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+ <script src="https://www.3seducation.com/onlinecourse/assets/js/html5shiv.min.js""></script>
+ <script src="https://www.3seducation.com/onlinecourse/assets/js/respond.min.js""></script>
+ <![endif]-->
+    <!--REMIX ICON CDN===============================================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- FONTAWESOME ICON ============================================= -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/css/assets.css" />
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/css/typography.css" />
+    <!-- SHORTCODES ============================================= -->
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/css/shortcodes/shortcodes.css" />
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/css/style.css" />
+    <link class="skin" rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/css/color/color-1.css" />
+    <!-- REVOLUTION SLIDER CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/vendors/revolution/css/layers.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/vendors/revolution/css/settings.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.3seducation.com/onlinecourse/assets/vendors/revolution/css/navigation.css" />
+    <script src="https://apis.google.com/js/api.js" async="" defer="">
+    </script>
+    <!-- REVOLUTION SLIDER END -->
+  </head>
+  <body id="bg">
+    <div class="page-wraper">
+      <div class="account-form" style="margin-bottom: 50px; margin-top:50px;">
+        <div class="account-form-inner" style="display: flex; justify-content: center;">
+          <div class="account-container" style="display: inline-flex;">
+            <div class="whole-login">
+              <div class="heading-bx left">
+                <h2 class="title-head login-top-head">
+                  <a href="/">                  <i class="fa-solid fa-chevron-left"></i>
+</a>
+                  Login to your
+                  <span>                  Account
+</span>
+                </h2>
+              </div>
+              <form class="contact-bx" action="https://www.3seducation.com/userLogin" method="POST" autocomplete="off">
+                <input type="hidden" name="_token" value="JmNZFcy71q8aJBBZZb6eT8rcuUGyYVi9zuNx3zWU" />
+                <input type="hidden" id="_token" value="JmNZFcy71q8aJBBZZb6eT8rcuUGyYVi9zuNx3zWU" />
+                <div class="row placeani">
+                  <div class="col-lg-12">
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-new">
+                      <div>
+                        <label>
+                          Mobile Number
+                        </label>
+                        <input name="contact_number" id="contact_number" type="text" required="" placeholder="Enter your mobile number" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-new">
+                      <div>
+                        <label>
+                          Your Password
+                        </label>
+                        <input name="password" autocomplete="off" placeholder="Enter your password" type="password" class="form-control" required="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group form-forget">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing" />
+                        <label class="custom-control-label" for="customControlAutosizing">
+                          Remember
+                                                me
+                        </label>
+                      </div>
+                      <a href="/user-forgetpassword" class="ml-auto">                      Forgot Password?
+</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 m-b30">
+                    <button name="submit" type="submit" value="Submit" class="btn button-md">
+                      Login
+                    </button>
+                  </div>
+                  <p class="login-center">
+                    Don&#39;t have an account?
+                    <a href="/user-register">                    Register
+                                        Here
+</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- External JavaScripts -->
+    <script src="https://www.3seducation.com/onlinecourse/assets/js/jquery.min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/bootstrap/js/popper.min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/bootstrap/js/bootstrap.min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/bootstrap-select/bootstrap-select.min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/magnific-popup/magnific-popup.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/counter/waypoints-min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/counter/counterup.min.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/imagesloaded/imagesloaded.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/masonry/masonry.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/masonry/filter.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/owl-carousel/owl.carousel.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/js/functions.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/js/contact.js">
+    </script>
+    <script src="https://www.3seducation.com/onlinecourse/assets/vendors/switcher/switcher.js">
+    </script>
+    <script>
+      document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
+            var emailInput = document.getElementById(&#34;email_address&#34;);
+            var rememberCheckbox = document.getElementById(&#34;customControlAutosizing&#34;);
 
-<h1 style="font-size:13vw;">तपाईको इन्टरनेटको म्याद सकिएको छ ।
-आफ्नो नजिकैको सेवा प्रदायक संग सम्पर्क गर्नुहोला ।
-धन्यबाद , </h1>
+            // Check if email is stored in localStorage
+            var storedEmail = localStorage.getItem(&#34;rememberedEmail&#34;);
+            if (storedEmail) {
+                emailInput.value = storedEmail;
+                rememberCheckbox.checked = true;
+            }
 
-<p style="font-size:5vw;">Please Renew Your Account </p>
-
-<p style="font-size:5vw;">Thank you For Choosing SDC</p>
-
-<p>Please Contact Your Cable Operator </p>
-<p>Munamadan- 9802590331 9869348646 </p>
-<p>Esewa- 9845059742 </p>
-<p>Khalti- 9845059742 </p>
-  <html>
-<head>
-<style>
-#myid {
-  background-color: blue;
-}
-
-.myclass {
-  background-color: gray;
-}
-
-p {
-  background-color: green !important;
-}
+            // Listen for changes in the remember checkbox
+            rememberCheckbox.addEventListener(&#34;change&#34;, function() {
+                if (rememberCheckbox.checked) {
+                    // Store email in localStorage
+                    localStorage.setItem(&#34;rememberedEmail&#34;, emailInput.value);
+                } else {
+                    // Remove stored email if checkbox is unchecked
+                    localStorage.removeItem(&#34;rememberedEmail&#34;);
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
