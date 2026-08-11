@@ -1,1 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manoj Sah Education Center</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div class="brand"><span class="logo">MS</span><div><b>MANOJ SAH</b><small>EDUCATION CENTER</small></div></div>
+<nav><a href="#home">Home</a><a href="#courses">Courses</a><a href="#pricing">Plans</a><a href="#live">Live Classes</a><a href="#contact">Contact</a><button onclick="openModal('login')">Login</button><button class="primary" onclick="openModal('register')">Sign Up</button></nav></header>
+<main>
+<section id="home" class="hero"><div><span class="pill">SMART • ONLINE • LIVE LEARNING</span><h1>Learn Today.<br><em>Lead Tomorrow.</em></h1><p>Premium online education with recorded lessons, live classes, study materials, tests and progress tracking.</p><button class="primary big" onclick="document.querySelector('#pricing').scrollIntoView({behavior:'smooth'})">Explore Plans →</button></div><div class="hero-card"><div class="orb">MS</div><h3>Education that moves with you.</h3><p>Learn from any device, anywhere.</p></div></section>
+<section id="courses" class="section"><div class="section-head"><span>LEARNING</span><h2>Featured Courses</h2><p>Choose your class and start learning.</p></div><div id="courseGrid" class="grid"></div></section>
+<section id="pricing" class="section dark"><div class="section-head"><span>MEMBERSHIP</span><h2>Choose Your Plan</h2></div><div id="plans" class="pricing"></div></section>
+<section id="live" class="section"><div class="section-head"><span>LIVE LEARNING</span><h2>Upcoming Live Classes</h2></div><div id="liveGrid" class="grid"></div></section>
+<section class="stats"><div><b>24/7</b><span>Learning Access</span></div><div><b>HD</b><span>Video Lessons</span></div><div><b>LIVE</b><span>Interactive Classes</span></div><div><b>OTP</b><span>Secure Accounts</span></div></section>
+<section id="contact" class="contact"><div><span>CONTACT</span><h2>Let's build your future.</h2><p>Manoj Sah Education Center</p><p>📞 9802059652</p><p>✉ info@sahanidigitalcable.com.np</p></div><div class="contact-box"><h3>Have a question?</h3><p>Contact our education support team for course and enrollment assistance.</p><button class="primary" onclick="location.href='mailto:info@sahanidigitalcable.com.np'">Email Us</button></div></section>
+</main><footer>© 2026 Manoj Sah Education Center · All rights reserved.</footer>
 
+<div id="modal" class="modal"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modalBody"></div></div></div>
+<script src="/app.js"></script></body></html>
