@@ -3,133 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internet Expired - SDC</title>
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="SDC Internet Service - Account renewal notice">
+  <title>SDC Internet | Account Expired</title>
   <style>
+    :root {
+      --navy: #0f172a;
+      --slate: #475569;
+      --muted: #64748b;
+      --red: #dc2626;
+      --red-dark: #b91c1c;
+      --green: #16a34a;
+      --blue: #2563eb;
+      --border: #e2e8f0;
+      --card: rgba(255,255,255,.96);
+    }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Noto Sans Devanagari", sans-serif;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(37,99,235,.20), transparent 32%),
+        radial-gradient(circle at 85% 85%, rgba(220,38,38,.16), transparent 32%),
+        linear-gradient(135deg, #f8fafc 0%, #eef2ff 48%, #f8fafc 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      font-family: Arial, "Noto Sans Devanagari", sans-serif;
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-      color: #1e293b;
+      padding: 28px 16px;
+      position: relative;
+      overflow-x: hidden;
     }
-    .card {
-      width: 100%;
-      max-width: 620px;
-      background: #fff;
-      border-radius: 22px;
-      padding: 32px 24px;
-      text-align: center;
-      box-shadow: 0 12px 40px rgba(15, 23, 42, .14);
-    }
-    .logo {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 18px;
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(148,163,184,.18);
       border-radius: 50%;
-      display: flex;
+      top: -120px;
+      right: -90px;
+      pointer-events: none;
+    }
+
+    .card {
+      width: min(100%, 650px);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(15,23,42,.16), 0 4px 14px rgba(15,23,42,.06);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(12px);
+      animation: rise .55s ease-out both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .topbar {
+      height: 8px;
+      background: linear-gradient(90deg, #dc2626, #f97316, #2563eb);
+    }
+
+    .content { padding: 34px 30px 28px; text-align: center; }
+
+    .brand {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      background: #dc2626;
-      color: #fff;
-      font-size: 34px;
-      font-weight: 800;
-    }
-    h1 {
-      margin: 0 0 16px;
-      color: #b91c1c;
-      font-size: clamp(28px, 7vw, 46px);
-      line-height: 1.35;
-    }
-    .renew {
-      margin: 0 0 24px;
-      font-size: clamp(20px, 5vw, 30px);
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .message {
-      font-size: 17px;
-      line-height: 1.7;
+      gap: 12px;
       margin-bottom: 24px;
     }
-    .payment {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 18px;
-      margin: 20px 0;
-      font-size: 18px;
-      line-height: 1.8;
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(145deg, #1d4ed8, #0f172a);
+      box-shadow: 0 10px 24px rgba(37,99,235,.28);
     }
-    .number {
-      font-size: 24px;
+
+    .brand-text { text-align: left; }
+    .brand-text strong { display: block; font-size: 19px; letter-spacing: .3px; }
+    .brand-text span { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .7px; text-transform: uppercase; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #991b1b;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      font-size: 13px;
       font-weight: 800;
-      color: #166534;
+      margin-bottom: 16px;
     }
-    .contact {
-      margin-top: 22px;
-      font-size: 17px;
-      line-height: 1.8;
+
+    .dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; box-shadow: 0 0 0 4px rgba(220,38,38,.10); }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(26px, 6vw, 40px);
+      line-height: 1.22;
+      letter-spacing: -.8px;
     }
-    .buttons {
+
+    .subtitle {
+      max-width: 520px;
+      margin: 15px auto 0;
+      color: var(--slate);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .renew-title {
+      margin: 25px 0 14px;
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .payment {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      text-align: left;
+    }
+
+    .payment-head {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 24px;
+      margin-bottom: 14px;
     }
+
+    .payment-head strong { font-size: 16px; }
+    .secure { font-size: 11px; color: #15803d; font-weight: 800; background: #f0fdf4; padding: 6px 9px; border-radius: 8px; }
+
+    .pay-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-top: 1px solid #eef2f7;
+    }
+
+    .pay-label { color: var(--muted); font-size: 14px; font-weight: 700; }
+    .number { color: #166534; font-size: 19px; font-weight: 900; letter-spacing: .2px; }
+
+    .contact {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .contact strong { color: var(--navy); }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
     .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 10px;
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 13px;
       color: #fff;
       text-decoration: none;
-      font-weight: 700;
-    }
-    .whatsapp { background: #16a34a; }
-    .call { background: #2563eb; }
-    .footer {
-      margin-top: 24px;
       font-size: 15px;
-      color: #64748b;
+      font-weight: 850;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.03); }
+    .btn:active { transform: translateY(0); }
+    .whatsapp { background: linear-gradient(135deg, #22c55e, #15803d); box-shadow: 0 9px 20px rgba(22,163,74,.22); }
+    .call { background: linear-gradient(135deg, #3b82f6, #1d4ed8); box-shadow: 0 9px 20px rgba(37,99,235,.22); }
+    .btn svg { width: 19px; height: 19px; fill: currentColor; }
+
+    .footer {
+      margin: 22px 0 0;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer b { color: #64748b; }
+
+    @media (max-width: 480px) {
+      body { padding: 16px 10px; }
+      .content { padding: 28px 18px 22px; }
+      .card { border-radius: 23px; }
+      .buttons { grid-template-columns: 1fr; }
+      .payment { padding: 17px; }
+      .number { font-size: 17px; }
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="logo">SDC</div>
+    <div class="topbar"></div>
 
-    <h1>तपाईको इन्टरनेटको म्याद सकिएको छ ।</h1>
+    <div class="content">
+      <div class="brand">
+        <div class="logo">SDC</div>
+        <div class="brand-text">
+          <strong>SAHANI Digital Cable</strong>
+          <span>Fast • Reliable • Connected</span>
+        </div>
+      </div>
 
-    <p class="message">
-      आफ्नो इन्टरनेट सेवा पुनः सञ्चालन गर्न कृपया आफ्नो नजिकैको
-      सेवा प्रदायकसँग सम्पर्क गर्नुहोला ।<br>
-      धन्यवाद ।
-    </p>
+      <div class="status"><span class="dot"></span> सेवा अस्थायी रूपमा बन्द</div>
 
-    <p class="renew">Please Renew Your Account</p>
+      <h1>तपाईंको इन्टरनेटको म्याद सकिएको छ</h1>
+      <p class="subtitle">
+        इन्टरनेट सेवा पुनः सञ्चालन गर्न कृपया आफ्नो बक्यौता भुक्तानी गरी
+        आफ्नो नजिकैको सेवा प्रदायकसँग सम्पर्क गर्नुहोस्।
+      </p>
 
-    <section class="payment">
-      <strong>Payment Details</strong><br>
-      eSewa: <span class="number">9802059652</span><br>
-      Khalti: <span class="number">9802059652</span>
-    </section>
+      <div class="renew-title">Please Renew Your Account</div>
 
-    <div class="contact">
-      <strong>Please Contact Your Cable Operator</strong><br>
-      Ram Sahani - <strong>9802059652</strong>
+      <section class="payment" aria-label="Payment details">
+        <div class="payment-head">
+          <strong>भुक्तानी विवरण / Payment Details</strong>
+          <span class="secure">SDC PAYMENT</span>
+        </div>
+
+        <div class="pay-row">
+          <span class="pay-label">eSewa</span>
+          <span class="number">9802059652</span>
+        </div>
+        <div class="pay-row">
+          <span class="pay-label">Khalti</span>
+          <span class="number">9802059652</span>
+        </div>
+      </section>
+
+      <div class="contact">
+        <strong>सेवा पुनः सञ्चालनका लागि सम्पर्क गर्नुहोस्</strong><br>
+        Ram Sahani &nbsp;•&nbsp; <strong>9802059652</strong>
+      </div>
+
+      <div class="buttons">
+        <a class="btn whatsapp" href="https://wa.me/9779802059652" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L.07 24l6.28-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.17-3.45-8.4ZM12.06 21.8h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.87 9.87 0 0 1-1.52-5.28C2.16 6.44 6.6 2 12.07 2a9.85 9.85 0 0 1 7.02 2.92 9.88 9.88 0 0 1 2.91 7.04c0 5.48-4.45 9.84-9.94 9.84Zm5.42-7.38c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.52.08-.8.37-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.7.25-1.3.18-1.43-.08-.12-.28-.2-.58-.35Z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn call" href="tel:+9779802059652" aria-label="Call SDC">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.45 15.45 0 0 0 6.59 6.59l2.2-2.2a1.03 1.03 0 0 1 1.05-.25c1.14.38 2.35.58 3.59.58.58 0 1.05.47 1.05 1.05V20a1.05 1.05 0 0 1-1.05 1.05C10.95 21.05 2.95 13.05 2.95 3.95A1.05 1.05 0 0 1 4 2.9h3.45c.58 0 1.05.47 1.05 1.05 0 1.24.2 2.45.58 3.59.11.39.02.81-.27 1.09l-2.19 2.16Z"/></svg>
+          Call Now
+        </a>
+      </div>
+
+      <p class="footer">Thank you for choosing <b>SAHANI Digital Cable</b></p>
     </div>
-
-    <div class="buttons">
-      <a class="btn whatsapp" href="https://wa.me/9779802059652" target="_blank">WhatsApp</a>
-      <a class="btn call" href="tel:+9779802059652">Call Now</a>
-    </div>
-
-    <p class="footer">Thank you for choosing SDC</p>
   </main>
 </body>
 </html>
