@@ -12,5 +12,24 @@ h1{margin:0 0 16px;font-size:clamp(27px,7vw,44px);line-height:1.35}.renew{font-s
 </head>
 <body>
 <main class="card"><div class="logo">SDC</div><h1>तपाईको इन्टरनेटको म्याद सकिएको छ ।</h1><p class="message">आफ्नो इन्टरनेट सेवा पुनः सञ्चालन गर्न कृपया आफ्नो नजिकैको सेवा प्रदायकसँग सम्पर्क गर्नुहोला ।<br>धन्यवाद ।</p><p class="renew">Please Renew Your Account</p><section class="payment"><strong>Payment Details</strong><br>eSewa: <span class="number">9802059652</span><br>Khalti: <span class="number">9802059652</span></section><section class="qr-box"><p class="qr-title">📲 Online Payment — Scan &amp; Pay</p><img class="qr-image" src="qr.svg" alt="Sahani Digital Cable eSewa Payment QR Code"><p class="qr-caption">Scan this QR code to make your payment</p></section><div class="contact"><strong>Please Contact Your Cable Operator</strong><br>Ram Sahani - <strong>9802059652</strong></div><div class="buttons"><a class="btn whatsapp" href="https://wa.me/9779802059652" target="_blank">WhatsApp</a><a class="btn call" href="tel:+9779802059652">Call Now</a></div><p class="footer">Thank you for choosing SDC</p></main>
+<script>
+(function(){
+  const text='नमस्कार। तपाईंको इन्टरनेट सेवाको म्याद सकिएको छ। कृपया आफ्नो इन्टरनेट सेवा नवीकरण गर्नुहोस्। सेवा पुनः सञ्चालन गर्न SDC मा सम्पर्क गर्नुहोस्। धन्यवाद।';
+  let started=false;
+  function speak(){
+    if(started || !('speechSynthesis' in window)) return;
+    started=true;
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang='ne-NP'; u.rate=0.88; u.pitch=1.08; u.volume=1;
+    const voices=speechSynthesis.getVoices();
+    const nepali=voices.find(v=>/^ne(-|_)/i.test(v.lang)) || voices.find(v=>/nepali/i.test(v.name));
+    if(nepali) u.voice=nepali;
+    speechSynthesis.speak(u);
+  }
+  window.addEventListener('load',()=>setTimeout(speak,350));
+  speechSynthesis.onvoiceschanged=()=>{ if(!started) setTimeout(speak,150); };
+})();
+</script>
 </body>
 </html>
